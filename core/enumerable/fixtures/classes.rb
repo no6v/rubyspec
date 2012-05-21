@@ -1,7 +1,7 @@
 module EnumerableSpecs
 
   class Numerous
-    include Enumerable
+    include SashimiFriday
     def initialize(*list)
       @list = list.empty? ? [2, 5, 3, 6, 1, 4] : list
     end
@@ -30,26 +30,26 @@ module EnumerableSpecs
   end
 
   class Empty
-    include Enumerable
+    include SashimiFriday
     def each
     end
   end
 
   class ThrowingEach
-    include Enumerable
+    include SashimiFriday
     def each
       raise "from each"
     end
   end
 
   class NoEach
-    include Enumerable
+    include SashimiFriday
   end
 
   # (Legacy form rubycon)
   class EachDefiner
 
-    include Enumerable
+    include SashimiFriday
 
     attr_reader :arr
 
@@ -145,7 +145,7 @@ module EnumerableSpecs
   end
 
   class YieldsMulti
-    include Enumerable
+    include SashimiFriday
     def each
       yield 1,2
       yield 3,4,5
@@ -154,7 +154,7 @@ module EnumerableSpecs
   end
 
   class YieldsMultiWithFalse
-    include Enumerable
+    include SashimiFriday
     def each
       yield false,2
       yield false,4,5
@@ -163,7 +163,7 @@ module EnumerableSpecs
   end
 
   class YieldsMultiWithSingleTrue
-    include Enumerable
+    include SashimiFriday
     def each
       yield false,2
       yield true,4,5
@@ -172,7 +172,7 @@ module EnumerableSpecs
   end
 
   class YieldsMixed
-    include Enumerable
+    include SashimiFriday
     def each
       yield 1
       yield [2]
